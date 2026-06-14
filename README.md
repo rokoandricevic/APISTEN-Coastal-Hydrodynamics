@@ -18,7 +18,9 @@ Unlike conventional physics-informed models that enforce rigid, globally weighte
 
 The core production code consists of the following foundational tracking scripts:
 
-* 📄 **`APISTEN_Time_Series_Pipeline.py`**: The master execution script governing the spatio-temporal convolutional ensemble, out-of-sample standardization tracks, loss optimization loops, and final matrix outputs.
+* 📄 **`APISTEN_Time_Series_Pipeline.py`**: The master execution script governing the spatio-temporal convolutional ensemble, out-of-sample standardization tracks, loss optimization loops, and final matrix outputs. To run APISTEN_Time_series_Pipeline.py use inputs.bin and outputs.bin files together with directory XLpolygon_input_directory available at (https://doi.org/
+10.5281/zenodo.20184062).
+
 * 📄 **`scan_jugo_anomalies.py`**: The automated meteorological processing track designed to ingest ERA5 reanalysis data vectors to identify and screen extreme atmospheric/hydrodynamic forcing events (e.g., severe *Jugo* cyclonic sequences).
 * 📄 **`generate_apisten_schematic.py`**: A dedicated diagnostic utility using the Graphviz engine to programmatically compile and output the formal vector architectural schematic layout of the network's processing pipelines.
 
