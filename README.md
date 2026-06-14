@@ -18,16 +18,30 @@ Unlike conventional physics-informed models that enforce rigid, globally weighte
 
 The core production code consists of the following foundational tracking scripts:
 
-* 📄 **`APISTEN_Time_Series_Pipeline.py`**: The master execution script governing the spatio-temporal convolutional ensemble, out-of-sample standardization tracks, loss optimization loops, and final matrix outputs. To run APISTEN_Time_series_Pipeline.py use inputs.bin and outputs.bin files together with directory XLpolygon_input_directory available at (https://doi.org/
-10.5281/zenodo.20184062).
+* 📄 **`APISTEN_Time_Series_Pipeline.py`**: The master execution script governing the spatio-temporal convolutional ensemble, out-of-sample standardization tracks, loss optimization loops, and final matrix outputs.
 
 * 📄 **`scan_jugo_anomalies.py`**: The automated meteorological processing track designed to ingest ERA5 reanalysis data vectors to identify and screen extreme atmospheric/hydrodynamic forcing events (e.g., severe *Jugo* cyclonic sequences).
 * 📄 **`generate_apisten_schematic.py`**: A dedicated diagnostic utility using the Graphviz engine to programmatically compile and output the formal vector architectural schematic layout of the network's processing pipelines.
 
 ---
 
+## 📊 Data Availability & Reproducibility
+
+To maintain absolute scientific reproducibility, this framework utilizes a dual-repository structure:
+1. **Source Code Codebase (This Repository):** Contains the production-ready implementation scripts.
+2. **Master Training Dataset & Multimedia (Zenodo Archive):** The full **4,000 footprint-representative stochastic realizations** used to bridge sub-pixel scale gaps, along with the 22 sequential test-polygon time-series arrays, are permanently archived on Zenodo at:  
+🔗 **[https://doi.org/10.5281/zenodo.20688936](https://doi.org/10.5281/zenodo.20688936)**
+
+### Data Setup Instructions:
+1. Download `inputs.bin`, `outputs.bin`, and `XLpolygon_input_directory.zip` from the Zenodo repository.
+2. Place all assets directly into your root execution folder.
+3. Unzip the directory so that the 22 temporal binary files sit exactly under the path: `./XLpolygon_input_directory/XLpolygon_input_YYYYMMDD.bin`
+4. Run `python3 APISTEN_Time_Series_Pipeline.py`
+
 ## ⚙️ Prerequisites & Setup
 
 ### 1. Python Environment
 The code is built for **Python 3.8+** and requires standard scientific data packages. You can install the primary python requirements via `pip`:
+
+```bash
 pip3 install numpy pandas scipy scikit-learn graphviz
